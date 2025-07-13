@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease;
+}
+
+body.light {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+.container {
+  position: relative;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+  user-select: none;
+}
+
+body.light .theme-toggle {
+  color: #222;
+}
+
+.calculator {
+  width: 360px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+body.light .calculator {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #00ffe1;
+  font-size: 2.6rem;
+  text-align: right;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  min-height: 70px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+body.light .display {
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+button {
+  font-size: 1.4rem;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+body.light button {
+  background: rgba(0, 0, 0, 0.07);
+  color: #111;
+  box-shadow: none;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+button.operator {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+button.equal {
+  background: #32ff7e;
+  color: #000;
+  font-weight: bold;
+}
+
+button.function {
+  background: #1e90ff;
+  color: #fff;
+}
+
+button.zero {
+  grid-column: span 2;
+}
